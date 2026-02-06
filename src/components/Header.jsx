@@ -40,8 +40,8 @@ const Header = () => {
             {/* Main Header */}
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out border-b ${scrolled
-                        ? 'bg-white/80 backdrop-blur-md py-4 border-gray-200 shadow-sm'
-                        : 'bg-transparent py-8 border-transparent'
+                    ? 'bg-white/80 backdrop-blur-md py-4 border-gray-200 shadow-sm'
+                    : 'bg-transparent py-8 border-transparent'
                     }`}
             >
                 <div className="container flex justify-between items-center">
@@ -95,7 +95,7 @@ const Header = () => {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8"
+                            className="fixed inset-0 bg-white/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8"
                         >
                             {['Home', 'Products', 'Capabilities', 'About', 'Contact'].map((item, i) => (
                                 <motion.div
