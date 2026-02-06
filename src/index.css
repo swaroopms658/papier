@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand Red: Matches 'Papier' Logo (#e62e2e) */
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-500: #e62e2e;
+  /* The Logo Red */
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-900: #7f1d1d;
+  /* Deep Red */
+  --color-primary-950: #450a0a;
+  /* Almost Black Red */
+
+  /* NEAT FONT: Unified Inter for everything */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Inter', system-ui, sans-serif;
+
+  /* EXTREME SPACING: Maximum air */
+  --spacing-container: 1800px;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  /* Neat typography settings */
+  line-height: 2.0;
+  /* Massive leading for airy feel */
+  letter-spacing: 0.01em;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container - Huge padding for "Breathing Room" */
+.container {
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* Typography Scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  /* Lighter weights for elegance */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Editorial Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.tracking-widest-editorial {
+  letter-spacing: 0.2em;
+}
+
+/* Transitions */
+.transition-editorial {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Expo ease out */
+  transition-duration: 600ms;
+}
+
+/* The original @keyframes for fade-in and fade-in-up are now defined within the @theme block */
+/* @keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation Utilities */
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+@layer utilities {
+  .filter-duotone {
+    filter: grayscale(100%) contrast(1.2);
+    mix-blend-mode: multiply;
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .section-separator-gradient {
+    background: linear-gradient(to bottom, transparent, rgba(230, 46, 46, 0.03), transparent);
+  }
+}
+
+.pause-hover:hover {
+  animation-play-state: paused;
+}
